@@ -1,24 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Route} from 'react-router-dom';
+import HomePage from './pages/homepage/homepage.component';
+
+
+const HomePage2 = () =>{
+  return (
+    <div>
+      <h1>HOME PAGE 2</h1>
+    </div>
+  );
+};
+
+const TopicsList = () => {
+  return (
+    <div>
+      <h1>Topic List Page</h1>
+    </div>
+  );
+};
+
+const TopicDetail = () =>{
+  return (
+    <div>
+      <h1>TOPIC DETAIL PAGE</h1>
+    </div>
+  );
+};
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Route exact path ='/home2' component={HomePage2}/>
+      <Route exact path='/topics' component={TopicsList} />
+      <Route path='/topics/:topicId' component={TopicDetail} />
+      <Route exact path ='/' component={HomePage}/>
+      
     </div>
   );
 }
