@@ -1,41 +1,21 @@
 import React from 'react';
 import './App.css';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
 
+const HatsPage = () =>(
 
-const HomePage2 = () =>{
-  return (
-    <div>
-      <h1>HOME PAGE 2</h1>
-    </div>
-  );
-};
-
-const TopicsList = () => {
-  return (
-    <div>
-      <h1>Topic List Page</h1>
-    </div>
-  );
-};
-
-const TopicDetail = () =>{
-  return (
-    <div>
-      <h1>TOPIC DETAIL PAGE</h1>
-    </div>
-  );
-};
+  <div>
+    <h1>HATS PAGE</h1>
+  </div>
+);
 
 
 function App() {
   return (
     <div >
-      <Route exact path ='/home2' component={HomePage2}/>
-      <Route exact path='/topics' component={TopicsList} />
-      <Route path='/topics/:topicId' component={TopicDetail} />
       <Route exact path ='/' component={HomePage}/>
+      <Route exact path ='/hats' component={HomePage}/>
       
     </div>
   );
